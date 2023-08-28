@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 300px;
+            border: 2px solid rgb(92, 117, 2);
+        }
+        .box>span{
+            display: flex;
+            width: 400px;
+            height: 150px;
+            background-color: rgb(227, 207, 25);
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="parent(event)">
+        <span onclick="child(event)"></span>
+    </div>
+
+    <script>
+        function parent(){
+            alert( ' i am parent')
+        }
+        function child(e){
+            alert( ' i am child')
+            e.stopImmediatePropagation()
+        }
+    </script>
+</body>
+</html>

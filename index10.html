@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 300px;
+            border: 2px solid rgb(13, 107, 16);
+        }
+        .box>span{
+            display: flex;
+            width: 400px;
+            height: 150px;
+            background-color: rgb(15, 201, 21);
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+    </div>
+
+    <script>
+        document.getElementsByClassName('box')[0].addEventListener('click', ()=>{
+            alert('i am parent')
+        })
+
+        document.getElementsByTagName('span')[0].addEventListener('click', (e)=>{
+            alert('i am child')
+            // e.stopImmediatePropagation()
+            // e.stopPropagation()
+            e.cancelBubble=true
+        })
+    </script>
+</body>
+</html>

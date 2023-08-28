@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-status="off">menu</li>
+        <li data-status="off">menu</li>
+        <li data-status="off">menu</li>
+        <li data-status="off">menu</li>
+        <li data-status="off">menu</li>
+    </ul>
+    <script>
+        const _li = document.querySelectorAll('ul>li')
+        console.log(_li);
+        _li.forEach((item, index, array)=>{
+            item.addEventListener('click', ()=>{
+                if(
+                    (item.getAttribute('data-status')) == 'off'
+                ){
+                    item.style.color='blue'
+                    item.setAttribute('data-status', 'on')
+                }else{
+                    item.style.color='black'
+                    item.setAttribute('data-status', 'off')
+                }
+                
+            })
+        })
+    </script>
+</body>
+</html>
